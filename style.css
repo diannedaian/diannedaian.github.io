@@ -662,6 +662,116 @@ header {
   transform: scale(1.05);
 }
 
+/* Design Projects - Bigger Square Cards, exactly 3 per row */
+.portfolio-item.fashion {
+  flex: 0 0 calc(33.333% - 40px);
+  max-width: calc(33.333% - 40px);
+  margin: 20px;
+  width: calc(33.333% - 40px) !important;
+}
+
+.portfolio-item.fashion .portfolio-wrapper {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Creates perfect square */
+  position: relative;
+}
+
+.portfolio-item.fashion img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.portfolio-item.fashion .portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Force 3 per row on all screen sizes except very small */
+@media (max-width: 768px) {
+  .portfolio-item.fashion {
+    flex: 0 0 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+    margin: 15px;
+    width: calc(33.333% - 30px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-item.fashion {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    margin: 10px;
+    width: calc(50% - 20px) !important;
+  }
+}
+
+/* 3D Modeling - Same as Design Projects: Bigger Square Cards, exactly 3 per row */
+.portfolio-item.portrait {
+  flex: 0 0 calc(33.333% - 40px);
+  max-width: calc(33.333% - 40px);
+  margin: 20px;
+  width: calc(33.333% - 40px) !important;
+}
+
+.portfolio-item.portrait .portfolio-wrapper {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Creates perfect square */
+  position: relative;
+}
+
+.portfolio-item.portrait img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.portfolio-item.portrait .portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Force 3 per row on all screen sizes except very small */
+@media (max-width: 768px) {
+  .portfolio-item.portrait {
+    flex: 0 0 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+    margin: 15px;
+    width: calc(33.333% - 30px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-item.portrait {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    margin: 10px;
+    width: calc(50% - 20px) !important;
+  }
+}
+
 /* - Billboard Section
 --------------------------------------------------------------*/
 #billboard .text-content {
@@ -689,83 +799,113 @@ header {
 
 /* Interactive Canvas Styles */
 .interactive-canvas {
-    max-width: 520px; /* Match the text content width */
-  }
+  max-width: 520px; /* Match the text content width */
+}
 
-  .canvas-controls {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+.canvas-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  .brush-btn {
-    padding: 6px 10px;
-    border: none;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    min-width: 35px;
-  }
+.brush-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  min-width: 35px;
+}
 
-  .brush-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
+.brush-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .brush-btn.active {
-    background: var(--bs-primary);
-    color: white;
-    border-color: var(--bs-primary);
-  }
+.brush-btn.active {
+  background: var(--bs-primary);
+  color: white;
+  border-color: var(--bs-primary);
+}
 
-  .clear-btn-small {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 15px;
-    background: #ff6b6b;
-    color: white;
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin-left: auto;
-  }
+.clear-btn-small {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 15px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
 
-  .clear-btn-small:hover {
-    background: #ff5252;
-    transform: translateY(-1px);
-  }
+.clear-btn-small:hover {
+  background: #ff5252;
+  transform: translateY(-1px);
+}
 
-  .canvas-wrapper-small {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background: #fbf8f3;
-    border: 1px solid #e9ecef;
-  }
+.canvas-wrapper-small {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #fbf8f3;
+  border: 1px solid #e9ecef;
+}
 
-  @media (max-width: 768px) {
-    .interactive-canvas {
-      max-width: 100%;
-      margin-top: 2rem;
-    }
+@media (max-width: 768px) {
+  .interactive-canvas {
+    max-width: 100%;
+    margin-top: 2rem;
   }
+}
 
 /* contact image  */
 .contact-image {
   margin-bottom: 0;
-  margin-top: -200px;
+  margin-top: -150px;
   text-align: right;
+  margin-right: -100px;
 }
 .contact-image img {
-  max-width: 650px;
-  max-height: 750px;
+  max-width: 1400px;
+  max-height: 1400px;
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+/* Extracurricular Activities Styles */
+.extracurricular-activities {
+  margin-top: 2rem;
+}
+
+.activity-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font);
+}
+
+.activity-description {
+  color: var(--bs-body-color);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
 }
 @media screen and (max-width: 767px) {
   .contact-detail {
@@ -843,4 +983,250 @@ header {
   .research-teaser {
     flex: none;
   }
+}
+
+/* MITIT Hover Effect */
+.mitit-link {
+  color: var(--bs-primary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.mitit-link:hover {
+  color: var(--bs-primary-dark);
+}
+
+.mitit-hover-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.mitit-popup {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.8) translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  top: 50%;
+  left: 50%;
+}
+
+.mitit-popup.show {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.mitit-popup-content {
+  position: relative;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--bs-primary);
+}
+
+.mitit-popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.mitit-circle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--bs-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.mitit-circle-button:hover {
+  background: var(--bs-primary);
+  color: white;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mitit-circle-button span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+/* Ringcomm Hover Effect - Same as MITIT */
+.ringcomm-link {
+  color: var(--bs-primary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.ringcomm-link:hover {
+  color: var(--bs-primary-dark);
+}
+
+.ringcomm-hover-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.ringcomm-popup {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.8) translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  top: 50%;
+  left: 50%;
+}
+
+.ringcomm-popup.show {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.ringcomm-popup-content {
+  position: relative;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--bs-primary);
+}
+
+.ringcomm-popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.ringcomm-circle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--bs-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.ringcomm-circle-button:hover {
+  background: var(--bs-primary);
+  color: white;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ringcomm-circle-button span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+/* HackMIT Hover Effect - Same as MITIT and Ringcomm */
+.hackmit-link {
+  color: var(--bs-primary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.hackmit-link:hover {
+  color: var(--bs-primary-dark);
+}
+
+.hackmit-hover-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.hackmit-popup {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.8) translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  top: 50%;
+  left: 50%;
+}
+
+.hackmit-popup.show {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.hackmit-popup-content {
+  position: relative;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--bs-primary);
+}
+
+.hackmit-popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.hackmit-circle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--bs-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.hackmit-circle-button:hover {
+  background: var(--bs-primary);
+  color: white;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hackmit-circle-button span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 2px;
 }
