@@ -128,31 +128,41 @@
     </header>
 
     <div id="billboard" class="pb-5 mb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6"></div>
-          <div class="col-md-6">
-            <figure class="bannerimg position-relative">
-              <div class="text-content ps-0 ms-0" data-aos="fade-in">
-                <h1 class="display-4">Art + Artifical Intelligence</h1>
-                <p class="py-3">
-                  I am an undergraduate student at MIT double majoring in
-                  Artificial Intelligence and Art & Design. My interests combine
-                  coding and creativity, I am exploring LLM creativity,3D modeling, computer
-                  grafics, HCI research, game design, and more.
-				</p>
-                <a href="https://drive.google.com/file/d/1uWi9_gK5hdWSo6l6MpDEh-FZzXJ0ZiEH/view?usp=sharing" class="btn btn-dark px-3 py-2" target="_blank">Resume</a>
-			 </div>
-              <img
-                src="images/banner.png"
-                class="img-fluid"
-                alt="photographer"
-              />
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-6"></div>
+			<div class="col-md-6">
+			  <figure class="bannerimg position-relative">
+				<div class="text-content ps-0 ms-0" data-aos="fade-in">
+				  <h1 class="display-4">Art + Artifical Intelligence</h1>
+				  <p class="py-3">
+					I am an undergraduate student at MIT double majoring in
+					Artificial Intelligence and Art & Design. My interests combine
+					coding and creativity, I am exploring LLM creativity, 3D modeling, computer
+					grafics, HCI research, game design, and more.
+				  </p>
+				  <a href="https://drive.google.com/file/d/1uWi9_gK5hdWSo6l6MpDEh-FZzXJ0ZiEH/view?usp=sharing" class="btn btn-dark px-3 py-2" target="_blank">Resume</a>
+
+				  <!-- Interactive Canvas -->
+				  <div class="interactive-canvas mt-4">
+					<div class="canvas-controls mb-2">
+					  <button class="brush-btn pen active" onclick="setBrush('pen')">✏️</button>
+					  <button class="brush-btn marker" onclick="setBrush('marker')">🖍️</button>
+					  <button class="brush-btn rainbow" onclick="setBrush('rainbow')">🌈</button>
+					  <button class="brush-btn wiggle" onclick="setBrush('wiggle')">〰️</button>
+					  <button class="clear-btn-small" onclick="clearCanvas()">Clear</button>
+					</div>
+					<div class="canvas-wrapper-small" id="canvasWrapper">
+					  <div id="p5-canvas"></div>
+					</div>
+				  </div>
+				</div>
+				<img src="images/banner.png" class="img-fluid" alt="photographer" />
+			  </figure>
+			</div>
+		  </div>
+		</div>
+	  </div>
     <!--billboard-->
 
     <!-- <section id="about" class="personal-info my-2 py-2 my-md-5 py-md-5">
@@ -249,209 +259,166 @@
         <div
           class="grid p-0 clearfix row row-cols-2 row-cols-md-3 row-cols-lg-5"
         >
-		<div class="col mb-4 portfolio-item fashion urban">
-			<div class="portfolio-wrapper">
-			  <a href="images/portfolio-item1.jpg" class="image-link" title="Sample Caption goes here for Portfolio Item 1.">
-				<img src="images/portfolio-thumb-1.jpg" class="img-fluid" alt="portfolio" />
-				<div class="portfolio-overlay">
-				  <div class="overlay-content">
-					<p class="project-description">This project is about innovative design using modern techniques and creative solutions.</p>
-				  </div>
-				</div>
-			  </a>
-			  <h4 class="project-title">Design Project 1</h4>
-			</div>
-		  </div>
-          <div class="col mb-4 portfolio-item fashion portrait events">
-            <a
-              href="images/portfolio-item2.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 2."
-              ><img
-                src="images/portfolio-thumb-2.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
-          </div>
-          <div class="col mb-4 portfolio-item portrait fashion">
-            <a
-              href="images/portfolio-item3.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 3."
-              ><img
-                src="images/portfolio-thumb-3.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+          <!-- Design Projects (fashion) -->
+          <div class="col mb-4 portfolio-item fashion">
+            <div class="portfolio-wrapper">
+              <a href="images/portfolio-item1.jpg" class="image-link" title="Design Project 1">
+                <img src="images/portfolio-thumb-1.jpg" class="img-fluid" alt="portfolio" />
+                <div class="portfolio-overlay">
+                  <div class="overlay-content">
+                    <p class="project-description">Innovative design using modern techniques and creative solutions.</p>
+                  </div>
+                </div>
+              </a>
+              <h4 class="project-title">Design Project 1</h4>
+            </div>
           </div>
           <div class="col mb-4 portfolio-item fashion">
-            <a
-              href="images/portfolio-item4.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 4."
-              ><img
-                src="images/portfolio-thumb-4.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
-          </div>
-          <div class="col mb-4 portfolio-item urban events">
-            <a
-              href="images/portfolio-item5.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 5."
-              ><img
-                src="images/portfolio-thumb-5.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
-          </div>
-          <div class="col mb-4 portfolio-item urban">
-            <a
-              href="images/portfolio-item6.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 6."
-              ><img
-                src="images/portfolio-thumb-6.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
-          </div>
-          <div class="col mb-4 portfolio-item urban portrait">
-            <a
-              href="images/portfolio-item7.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 7."
-              ><img
-                src="images/portfolio-thumb-7.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
-          </div>
-          <div class="col mb-4 portfolio-item portrait events">
-            <a
-              href="images/portfolio-item8.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 8."
-              ><img
-                src="images/portfolio-thumb-8.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
-          </div>
-          <div class="col mb-4 portfolio-item events urban fashion">
-            <a
-              href="images/portfolio-item9.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item 9."
-              ><img
-                src="images/portfolio-thumb-9.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
-          </div>
-          <div class="col mb-4 portfolio-item events portrait fashion">
-            <a
-              href="images/portfolio-item10.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 0."
-              ><img
-                src="images/portfolio-thumb-10.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+            <div class="portfolio-wrapper">
+              <a href="images/portfolio-item2.jpg" class="image-link" title="Design Project 2">
+                <img src="images/portfolio-thumb-2.jpg" class="img-fluid" alt="portfolio" />
+                <div class="portfolio-overlay">
+                  <div class="overlay-content">
+                    <p class="project-description">Creative design solution focusing on user experience and visual impact.</p>
+                  </div>
+                </div>
+              </a>
+              <h4 class="project-title">Design Project 2</h4>
+            </div>
           </div>
           <div class="col mb-4 portfolio-item fashion">
-            <a
-              href="images/portfolio-item11.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 1."
-              ><img
-                src="images/portfolio-thumb-11.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+            <div class="portfolio-wrapper">
+              <a href="images/portfolio-item3.jpg" class="image-link" title="Design Project 3">
+                <img src="images/portfolio-thumb-3.jpg" class="img-fluid" alt="portfolio" />
+                <div class="portfolio-overlay">
+                  <div class="overlay-content">
+                    <p class="project-description">Modern design approach combining aesthetics with functional principles.</p>
+                  </div>
+                </div>
+              </a>
+              <h4 class="project-title">Design Project 3</h4>
+            </div>
           </div>
-          <div class="col mb-4 portfolio-item portrait events">
-            <a
-              href="images/portfolio-item12.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 2."
-              ><img
-                src="images/portfolio-thumb-12.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+          <div class="col mb-4 portfolio-item fashion">
+            <div class="portfolio-wrapper">
+              <a href="images/portfolio-item4.jpg" class="image-link" title="Design Project 4">
+                <img src="images/portfolio-thumb-4.jpg" class="img-fluid" alt="portfolio" />
+                <div class="portfolio-overlay">
+                  <div class="overlay-content">
+                    <p class="project-description">Experimental design exploring new materials and interaction methods.</p>
+                  </div>
+                </div>
+              </a>
+              <h4 class="project-title">Design Project 4</h4>
+            </div>
           </div>
-          <div class="col mb-4 portfolio-item portrait urban">
-            <a
-              href="images/portfolio-item13.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 3."
-              ><img
-                src="images/portfolio-thumb-13.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+
+          <!-- 3D Modeling (portrait) -->
+          <div class="col mb-4 portfolio-item portrait">
+            <a href="images/3d-model1.jpg" class="image-link" title="3D Model 1">
+              <img src="images/3d-thumb-1.jpg" class="img-fluid" alt="3d modeling" />
+            </a>
           </div>
           <div class="col mb-4 portfolio-item portrait">
-            <a
-              href="images/portfolio-item14.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 4."
-              ><img
-                src="images/portfolio-thumb-14.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+            <a href="images/3d-model2.jpg" class="image-link" title="3D Model 2">
+              <img src="images/3d-thumb-2.jpg" class="img-fluid" alt="3d modeling" />
+            </a>
           </div>
-          <div class="col mb-4 portfolio-item fashion portrait urban">
-            <a
-              href="images/portfolio-item15.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 5."
-              ><img
-                src="images/portfolio-thumb-15.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+          <div class="col mb-4 portfolio-item portrait">
+            <a href="images/3d-model3.jpg" class="image-link" title="3D Model 3">
+              <img src="images/3d-thumb-3.jpg" class="img-fluid" alt="3d modeling" />
+            </a>
           </div>
-          <div class="col mb-4 portfolio-item urban fashion">
-            <a
-              href="images/portfolio-item16.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 6."
-              ><img
-                src="images/portfolio-thumb-16.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+
+          <!-- Visual Art (urban) - Your Traditional Art -->
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art1.jpg" class="image-link" title="Traditional Art 1">
+              <img src="images/traditionalart/art1.jpg" class="img-fluid" alt="traditional art" />
+            </a>
           </div>
-          <div class="col mb-4 portfolio-item events urban fashion">
-            <a
-              href="images/portfolio-item17.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 7."
-              ><img
-                src="images/portfolio-thumb-17.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art2.jpg" class="image-link" title="Traditional Art 2">
+              <img src="images/traditionalart/art2.jpg" class="img-fluid" alt="traditional art" />
+            </a>
           </div>
-          <div class="col mb-4 portfolio-item events portrait fashion">
-            <a
-              href="images/portfolio-item18.jpg"
-              class="image-link"
-              title="Sample Caption goes here for Portfolio Item1 8."
-              ><img
-                src="images/portfolio-thumb-18.jpg"
-                class="img-fluid"
-                alt="portfolio"
-            /></a>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art3.jpg" class="image-link" title="Traditional Art 3">
+              <img src="images/traditionalart/art3.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art4.jpg" class="image-link" title="Traditional Art 4">
+              <img src="images/traditionalart/art4.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art5.jpg" class="image-link" title="Traditional Art 5">
+              <img src="images/traditionalart/art5.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art6.jpg" class="image-link" title="Traditional Art 6">
+              <img src="images/traditionalart/art6.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art7.jpg" class="image-link" title="Traditional Art 7">
+              <img src="images/traditionalart/art7.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art8.jpg" class="image-link" title="Traditional Art 8">
+              <img src="images/traditionalart/art8.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art9.jpg" class="image-link" title="Traditional Art 9">
+              <img src="images/traditionalart/art9.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art10.jpg" class="image-link" title="Traditional Art 10">
+              <img src="images/traditionalart/art10.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item urban">
+            <a href="images/traditionalart/art11.jpg" class="image-link" title="Traditional Art 11">
+              <img src="images/traditionalart/art11.jpg" class="img-fluid" alt="traditional art" />
+            </a>
+          </div>
+
+          <!-- For Fun (events) -->
+          <div class="col mb-4 portfolio-item events">
+            <a href="images/fun-project1.jpg" class="image-link" title="Fun Project 1">
+              <img src="images/fun-thumb-1.jpg" class="img-fluid" alt="fun project" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item events">
+            <a href="images/fun-project2.jpg" class="image-link" title="Fun Project 2">
+              <img src="images/fun-thumb-2.jpg" class="img-fluid" alt="fun project" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item events">
+            <a href="images/fun-project3.jpg" class="image-link" title="Fun Project 3">
+              <img src="images/fun-thumb-3.jpg" class="img-fluid" alt="fun project" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item events">
+            <a href="images/fun-project1.jpg" class="image-link" title="Fun Project 1">
+              <img src="images/fun-thumb-1.jpg" class="img-fluid" alt="fun project" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item events">
+            <a href="images/fun-project2.jpg" class="image-link" title="Fun Project 2">
+              <img src="images/fun-thumb-2.jpg" class="img-fluid" alt="fun project" />
+            </a>
+          </div>
+          <div class="col mb-4 portfolio-item events">
+            <a href="images/fun-project3.jpg" class="image-link" title="Fun Project 3">
+              <img src="images/fun-thumb-3.jpg" class="img-fluid" alt="fun project" />
+            </a>
           </div>
         </div>
-      </div>
-    </section>
 
 
     <section id="research" class="latest-blogs my-2 py-2 my-md-5 py-md-5">
@@ -501,7 +468,7 @@
 				<div class="meta-tags text-uppercase text-gray d-flex gap-3 fs-6 mb-3 align-items-center">
 				  <span class="meta-date">2025</span>
 				  <span>ᐧ</span>
-				  <span class="meta-conference"><a href="https://iccv2025.thecvf.com/">ICCV AI4VA Workshop</a></span>
+				  <span class="meta-conference"><a href="https://sites.google.com/view/ai4vaiccv-2025">ICCV AI4VA Workshop</a></span>
 				</div>
 				<h3 class="research-title">
 				  Doodle Agent: Exploring Freeform Visual Generation with Multimodal LLMs
@@ -510,7 +477,7 @@
 				  Dingning Cao, Yifan Kang, Antonio Torralba, Yael Vinker
 				</p>
 				<p class="research-role">
-				  Co-first author exploring freeform visual generation with multimodal LLMs and structured prompting
+				  Co-first author exploring freeform visual generation with multimodal LLMs and open ended prompting
 				</p>
 				<div class="research-links d-flex gap-3">
 				  <a href="https://github.com/YIFANK/DoodleAgent" class="btn btn-sm btn-outline-dark" target="_blank">Code</a>
@@ -744,5 +711,90 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+<script>
+let currentBrush = 'pen';
+let hasDrawn = false;
+
+function setBrush(brushType) {
+    currentBrush = brushType;
+    document.querySelectorAll('.brush-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`.brush-btn.${brushType}`).classList.add('active');
+}
+
+function clearCanvas() {
+    background('#fbf8f3');
+    hasDrawn = false;
+}
+
+function setup() {
+    let canvas = createCanvas(520, 260); /* Bigger canvas, maintaining aspect ratio */
+    canvas.parent('p5-canvas');
+    background('#fbf8f3');
+    strokeCap(ROUND);
+}
+
+function draw() {
+    if (mouseIsPressed && mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+        switch(currentBrush) {
+            case 'pen':
+                pen();
+                break;
+            case 'marker':
+                marker();
+                break;
+            case 'rainbow':
+                rainbowBeads();
+                break;
+            case 'wiggle':
+                wiggle();
+                break;
+        }
+    }
+}
+
+// Original brush functions from your canvas
+function pen() {
+    stroke(0, 0, 0, 255);
+    strokeWeight(2);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+}
+
+function marker() {
+    fill(255, 200, 103, 40);
+    noStroke();
+    circle(mouseX, mouseY, 50);
+}
+
+function rainbowBeads() {
+    const hue = (frameCount * 10) % 360;
+    const hsbaColor = color(`hsba(${hue}, 70%, 90%, 0.6)`);
+    fill(hsbaColor);
+    noStroke();
+
+    const distance = dist(mouseX, mouseY, pmouseX, pmouseY);
+    const midX = (mouseX + pmouseX) / 2;
+    const midY = (mouseY + pmouseY) / 2;
+
+    circle(midX, midY, distance);
+}
+
+function wiggle() {
+    stroke(255, 120, 0, 255);
+    strokeWeight(3);
+    noFill();
+
+    const distance = dist(mouseX, mouseY, pmouseX, pmouseY);
+    const midX = (mouseX + pmouseX) / 2;
+    const midY = (mouseY + pmouseY) / 2;
+
+    const angle = Math.atan2(mouseY - pmouseY, mouseX - pmouseX);
+    const flip = (frameCount % 2) * PI;
+
+    arc(midX, midY, distance, distance, angle + flip, angle + PI + flip);
+}
+</script>
   </body>
 </html>

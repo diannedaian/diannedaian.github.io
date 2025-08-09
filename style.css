@@ -687,6 +687,73 @@ header {
   }
 }
 
+/* Interactive Canvas Styles */
+.interactive-canvas {
+    max-width: 520px; /* Match the text content width */
+  }
+
+  .canvas-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .brush-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    min-width: 35px;
+  }
+
+  .brush-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .brush-btn.active {
+    background: var(--bs-primary);
+    color: white;
+    border-color: var(--bs-primary);
+  }
+
+  .clear-btn-small {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 15px;
+    background: #ff6b6b;
+    color: white;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
+  }
+
+  .clear-btn-small:hover {
+    background: #ff5252;
+    transform: translateY(-1px);
+  }
+
+  .canvas-wrapper-small {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #fbf8f3;
+    border: 1px solid #e9ecef;
+  }
+
+  @media (max-width: 768px) {
+    .interactive-canvas {
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+  }
+
 /* contact image  */
 .contact-image {
   margin-bottom: 0;
