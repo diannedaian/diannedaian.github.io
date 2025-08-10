@@ -636,8 +636,45 @@ header {
 .project-description {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin: 0;
+  margin: 0 0 15px 0;
   color: rgba(255, 255, 255, 0.95);
+}
+
+.project-more-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.more-arrow {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  animation: bounce 2s infinite;
+}
+
+.more-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
 }
 
 .project-title {
@@ -743,6 +780,7 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.3s ease-out;
 }
 
 .portfolio-item.portrait .portfolio-overlay {
@@ -751,6 +789,21 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.portfolio-item.portrait .portfolio-wrapper:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-item.portrait .portfolio-wrapper:hover img {
+  transform: scale(1.05);
 }
 
 /* Force 3 per row on all screen sizes except very small */
@@ -869,11 +922,11 @@ header {
   margin-bottom: 0;
   margin-top: -150px;
   text-align: right;
-  margin-right: -100px;
+  margin-right: -200px;
 }
 .contact-image img {
-  max-width: 1400px;
-  max-height: 1400px;
+  max-width: 1600px;
+  max-height: 1600px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -1226,6 +1279,88 @@ header {
 }
 
 .hackmit-circle-button span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+/* Infinite Magazine Hover Effect - Same as MITIT, Ringcomm, and HackMIT */
+.infinite-link {
+  color: var(--bs-primary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.infinite-link:hover {
+  color: var(--bs-primary-dark);
+}
+
+.infinite-hover-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.infinite-popup {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.8) translate(-50%, -50%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  top: 50%;
+  left: 50%;
+}
+
+.infinite-popup.show {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.infinite-popup-content {
+  position: relative;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--bs-primary);
+}
+
+.infinite-popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.infinite-circle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--bs-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.infinite-circle-button:hover {
+  background: var(--bs-primary);
+  color: white;
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.infinite-circle-button span {
   font-size: 16px;
   font-weight: bold;
   margin-left: 2px;

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Little Fox Blender Animation - Dingning Cao</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="Dingning Cao" />
+    <meta name="keywords" content="3D modeling, Blender, animation, fox" />
+    <meta
+      name="description"
+      content="Little Fox 3D modeling and animation project by Dingning Cao"
+    />
+    <link rel="icon" type="image/png" href="../images/website_favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/vendor.css" />
+    <link rel="stylesheet" type="text/css" href="../fonts/icomoon.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Dark theme overrides */
+      body {
+        background-color: #111;
+        color: #f1f1f0;
+      }
+
+      .navbar {
+        background-color: rgba(17, 17, 17, 0.95) !important;
+      }
+
+      .project-hero {
+        background-color: #111;
+        padding: 120px 0 80px;
+      }
+
+      .project-content {
+        background-color: #1a1a1a;
+        padding: 80px 0;
+      }
+
+      .project-media {
+        background-color: #222;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+      }
+
+      .back-btn {
+        position: fixed;
+        top: 100px;
+        left: 30px;
+        z-index: 1000;
+        background: rgba(131, 169, 172, 0.9);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: rgba(131, 169, 172, 1);
+        color: white;
+        transform: translateX(-5px);
+      }
+
+      .section-title {
+        color: #f1f1f0;
+      }
+
+      .project-details h3,
+      .project-sidebar h3,
+      .project-sidebar h4 {
+        color: var(--bs-primary);
+        margin-bottom: 20px;
+      }
+
+      .tech-badge {
+        background: var(--bs-primary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="dark">
+    <a
+      href="../index.html#portfolio"
+      class="back-btn"
+      onclick="setPortfolioFilter('portrait')"
+    >
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+
+    <header id="header" class="fixed-top">
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="navbar navbar-expand-lg py-4">
+            <div class="navbar-brand ps-3 ps-md-4 ps-lg-5">
+              <a
+                href="../index.html"
+                style="
+                  font-weight: bold;
+                  font-size: 24px;
+                  text-decoration: none;
+                  color: #f1f1f0;
+                "
+              >
+                DINGNING CAO
+              </a>
+            </div>
+
+            <div
+              class="navbar-collapse collapse justify-content-end me-5"
+              id="slide-navbar-collapse"
+            >
+              <ul id="slide-down" class="navbar-nav gap-4">
+                <li>
+                  <a href="../index.html#billboard" class="nav-link">Home</a>
+                </li>
+                <li>
+                  <a href="../index.html#portfolio" class="nav-link active"
+                    >Portfolio</a
+                  >
+                </li>
+                <li>
+                  <a href="../index.html#research" class="nav-link">Research</a>
+                </li>
+                <li><a href="../index.html#contact" class="nav-link">:)</a></li>
+                <li>
+                  <a
+                    href="../images/dingning_cao_resume__1_page_ (1).pdf"
+                    class="nav-link"
+                    target="_blank"
+                    >Resume</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="social-links">
+              <ul class="list-unstyled d-flex m-0 gap-2">
+                <li>
+                  <a
+                    href="https://github.com/diannedaian"
+                    style="color: #f1f1f0"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/daian_art?igsh=dHViaGxseGJrbGti&utm_source=qr"
+                    style="color: #f1f1f0"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/dingning-cao-467619365/"
+                    style="color: #f1f1f0"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="project-hero" style="padding: 120px 0 20px"></section>
+
+    <section class="project-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1 class="section-title display-4 mb-4">
+              Little Fox<br />Blender Animation
+            </h1>
+
+            <div class="project-media">
+              <iframe
+                width="100%"
+                height="450"
+                src="https://www.youtube.com/embed/F8oL7sb-0nc"
+                title="Little Fox Blender Animation"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                style="border-radius: 8px"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="project-sidebar">
+              <div class="project-meta mb-3">
+                <span style="color: #888; font-size: 0.9rem"
+                  >2025 • Personal Project</span
+                >
+              </div>
+              <h3>Project Overview</h3>
+              <p>
+                This project features a charming 3D fox character brought to
+                life through detailed modeling and fluid animation in Blender.
+                The fox showcases natural movement patterns and expressive
+                gestures, demonstrating advanced character animation techniques.
+              </p>
+
+              <p>
+                The animation incorporates synchronized sound effects and
+                realistic physics, creating an engaging and lifelike character
+                that captures the playful nature of foxes while maintaining
+                technical excellence in 3D modeling and animation.
+              </p>
+
+              <h4 class="mt-4">Technical Details</h4>
+              <div class="mb-3">
+                <span class="tech-badge">Blender</span>
+                <span class="tech-badge">3D Modeling</span>
+                <span class="tech-badge">Character Rigging</span>
+                <span class="tech-badge">Animation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="container">
+        <div class="project-details">
+          <h3>Process</h3>
+
+          <div class="process-images mt-4 mb-4">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <a
+                  href="../images/3d/Fox/IMG_4813-1.png"
+                  class="image-link"
+                  title="Fox Process 1"
+                >
+                  <img
+                    src="../images/3d/Fox/IMG_4813-1.png"
+                    class="img-fluid"
+                    alt="Fox Process 1"
+                  />
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a
+                  href="../images/3d/Fox/IMG_4813-2.png"
+                  class="image-link"
+                  title="Fox Process 2"
+                >
+                  <img
+                    src="../images/3d/Fox/IMG_4813-2.png"
+                    class="img-fluid"
+                    alt="Fox Process 2"
+                  />
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a
+                  href="../images/3d/Fox/IMG_4813-3.png"
+                  class="image-link"
+                  title="Fox Process 3"
+                >
+                  <img
+                    src="../images/3d/Fox/IMG_4813-3.png"
+                    class="img-fluid"
+                    alt="Fox Process 3"
+                  />
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a
+                  href="../images/3d/Fox/IMG_4813-4.png"
+                  class="image-link"
+                  title="Fox Process 4"
+                >
+                  <img
+                    src="../images/3d/Fox/IMG_4813-4.png"
+                    class="img-fluid"
+                    alt="Fox Process 4"
+                  />
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a
+                  href="../images/3d/Fox/IMG_4813-5.png"
+                  class="image-link"
+                  title="Fox Process 5"
+                >
+                  <img
+                    src="../images/3d/Fox/IMG_4813-5.png"
+                    class="img-fluid"
+                    alt="Fox Process 5"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-5 pt-5" style="background-color: #0a0a0a">
+      <div class="container">
+        <div class="text-center py-4">
+          <div class="d-flex justify-content-center align-items-center gap-4">
+            <a
+              href="mailto:dcao2028@mit.edu"
+              style="color: var(--bs-primary); text-decoration: none"
+            >
+              <i class="fas fa-envelope me-2"></i>dcao2028@mit.edu
+            </a>
+            <span style="color: #666">|</span>
+            <a
+              href="../images/dingning_cao_resume__1_page_ (1).pdf"
+              target="_blank"
+              style="color: var(--bs-primary); text-decoration: none"
+            >
+              <i class="fas fa-file-pdf me-2"></i>Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="../js/plugins.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+
+    <script>
+      function setPortfolioFilter(filter) {
+        // Store the filter state in localStorage
+        localStorage.setItem("portfolioFilter", filter);
+      }
+
+      // Initialize Chocolat lightbox for image popups
+      document.addEventListener("DOMContentLoaded", function () {
+        // Simple initialization after a short delay
+        setTimeout(function () {
+          if (typeof Chocolat !== "undefined") {
+            Chocolat(document.querySelectorAll(".image-link"), {
+              imageSize: "contain",
+              loop: true,
+            });
+          }
+        }, 200);
+      });
+    </script>
+  </body>
+</html>
