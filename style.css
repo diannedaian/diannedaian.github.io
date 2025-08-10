@@ -21,6 +21,12 @@ CSS STRUCTURE:
 2. GENERAL TYPOGRAPHY
 
 --------------------------------------------------------------*/
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   --heading-font: "Libertinus Sans", sans-serif;
   --heading-font-weight: 400;
@@ -93,7 +99,9 @@ a {
 /* container fluid */
 .container-fluid {
   /* width: 98%; */
-  max-width: 1800px;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* Dropdown */
