@@ -623,14 +623,8 @@ header {
 }
 
 .portfolio-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.portfolio-item.isotope-item {
   opacity: 1;
-  transform: translateY(0);
+  transition: opacity 0.3s ease;
 }
 
 .portfolio-item img {

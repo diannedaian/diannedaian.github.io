@@ -3,43 +3,37 @@
 
   // init Isotope
   var initIsotope = function () {
-    $(".grid").each(function () {
-      // $('.grid').imagesLoaded( function() {
-      // images have loaded
-      var $buttonGroup = $(".button-group");
-      var $checked = $buttonGroup.find(".is-checked");
-      var filterValue = $checked.attr("data-filter");
+    var $grid = $(".grid");
+    var $buttonGroup = $(".button-group");
+    var $checked = $buttonGroup.find(".is-checked");
+    var filterValue = $checked.attr("data-filter");
 
-      var $grid = $(".grid").isotope({
-        itemSelector: ".portfolio-item",
-        // layoutMode: 'fitRows',
-        filter: filterValue,
-        initLayout: false, // Prevent initial layout
-      });
+    // Initialize Isotope only once
+    $grid.isotope({
+      itemSelector: ".portfolio-item",
+      filter: filterValue,
+      initLayout: false,
+    });
 
-      // Show grid after Isotope is initialized
-      $grid.addClass("isotope-ready");
+    // Show grid after Isotope is initialized
+    $grid.addClass("isotope-ready");
 
-      // Trigger layout after a short delay to ensure smooth transition
-      setTimeout(function () {
-        $grid.isotope("layout");
-      }, 100);
+    // Trigger layout after a short delay to ensure smooth transition
+    setTimeout(function () {
+      $grid.isotope("layout");
+    }, 100);
 
-      // bind filter button click
-      $(".button-group").on("click", "a", function (e) {
-        e.preventDefault();
-        filterValue = $(this).attr("data-filter");
-        $grid.isotope({ filter: filterValue });
-      });
+    // bind filter button click - use event delegation
+    $buttonGroup.off("click", "a").on("click", "a", function (e) {
+      e.preventDefault();
 
-      // change is-checked class on buttons
-      $(".button-group").each(function (i, buttonGroup) {
-        $buttonGroup.on("click", "a", function () {
-          $buttonGroup.find(".is-checked").removeClass("is-checked");
-          $(this).addClass("is-checked");
-        });
-      });
-      // });
+      // Update button states
+      $buttonGroup.find("a").removeClass("is-checked");
+      $(this).addClass("is-checked");
+
+      // Update filter
+      var newFilterValue = $(this).attr("data-filter");
+      $grid.isotope({ filter: newFilterValue });
     });
   };
 
