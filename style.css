@@ -925,6 +925,23 @@ header {
   transform: translateY(-1px);
 }
 
+.save-btn-small {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 15px;
+  background: #87ceeb;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.save-btn-small:hover {
+  background: #5f9ea0;
+  transform: translateY(-1px);
+}
+
 .canvas-wrapper-small {
   border-radius: 8px;
   overflow: hidden;

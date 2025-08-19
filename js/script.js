@@ -18,10 +18,11 @@
     // Show grid after Isotope is initialized
     $grid.addClass("isotope-ready");
 
-    // Trigger layout after a short delay to ensure smooth transition
+    // Apply the initial filter and trigger layout
     setTimeout(function () {
+      $grid.isotope({ filter: filterValue });
       $grid.isotope("layout");
-    }, 100);
+    }, 150);
 
     // bind filter button click - use event delegation
     $buttonGroup.off("click", "a").on("click", "a", function (e) {
@@ -106,8 +107,10 @@
       $(".sidebar-menu").toggleClass("open");
     });
 
-    // Initialize Isotope earlier for better performance
-    initIsotope();
+    // Initialize Isotope with a slight delay to ensure DOM is ready
+    setTimeout(function () {
+      initIsotope();
+    }, 50);
   }); // End of a document
 
   $(window).scroll(function () {
