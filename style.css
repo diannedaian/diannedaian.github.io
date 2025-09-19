@@ -228,10 +228,23 @@ a {
 /* end of Bootstrap Color Theme */
 #filters a {
   color: var(--bs-gray);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#filters a:hover {
+  color: var(--bs-dark);
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 #filters a.is-checked {
   color: var(--bs-dark);
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: 700;
 }
 
 /*----- Header Menu
