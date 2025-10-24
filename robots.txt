@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diannedaian.github.io/sitemap.xml
