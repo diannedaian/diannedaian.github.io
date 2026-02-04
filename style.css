@@ -1043,6 +1043,19 @@ header {
   border-radius: 4px;
 }
 
+/* Experience section: square thumbnails */
+#experience .research-teaser {
+  flex: 0 0 200px;
+}
+
+#experience .research-teaser img {
+  width: 200px;
+  height: 200px;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
 .research-details {
   flex: 1; /* Takes remaining space */
 }
@@ -1088,6 +1101,12 @@ header {
 
   .research-teaser {
     flex: none;
+  }
+
+  #experience .research-teaser img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
