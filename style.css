@@ -1048,6 +1048,11 @@ header {
   flex: 0 0 200px;
 }
 
+#experience .research-teaser .experience-thumbnail-link {
+  display: block;
+  line-height: 0;
+}
+
 #experience .research-teaser img {
   width: 200px;
   height: 200px;
