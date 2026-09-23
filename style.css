@@ -763,6 +763,11 @@ header {
   object-position: center;
 }
 
+.portfolio-item.fashion img.dreamgrid-cover {
+  background-color: #b4c19f;
+  object-fit: contain;
+}
+
 .portfolio-item.fashion .portfolio-overlay {
   position: absolute;
   top: 0;
