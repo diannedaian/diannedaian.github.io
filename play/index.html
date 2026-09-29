@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="https://diannedaian.github.io/play/">
+  <meta name="description" content="Play the complete 60-pet SAP sandbox against our trained PPO model with live browser inference.">
+  <title>Play against the bot — Dianne Cao</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">⚔</span><div><h1>You vs Model</h1><span>60 pets · Turtle Pack · Tier 1–6</span></div></div>
+    <nav aria-label="Modes"><a href="../blog/learning-rl-with-super-auto-pets.html">← Back to the article</a><span class="badge success">LIVE INFERENCE</span></nav>
+  </header>
+  <main class="duel-main">
+    <p class="small-note">Independent educational demo inspired by Super Auto Pets. Not affiliated with or endorsed by Team Wood Games. Frozen sandbox rules differ from the official game. Runs locally in your browser; no match data is uploaded. First load downloads Pyodide and NumPy from jsDelivr. <a href="https://github.com/diannedaian/sap-rl-lab">Source and limitations</a> · <a href="LICENSE.txt">Code license</a></p>
+    <div class="duel-toolbar"><div><h2 id="round-title">Build your first team</h2><p id="status" role="status">Loading rules and model. The first visit downloads the browser runtime…</p></div><button id="new-game" disabled>New game</button></div>
+    <div id="error" role="alert" hidden></div>
+    <section id="match" class="duel-grid" hidden>
+      <div class="play-area">
+        <section class="lane board" aria-labelledby="your-title">
+          <div class="board-heading"><h2 id="your-title">Your team</h2><div id="your-score" class="score-chips"></div></div>
+          <div class="section-label"><span>← Front of team</span><span id="action-count"></span></div>
+          <div id="your-team" class="pet-row"></div>
+          <div id="shop-area">
+            <div class="section-label"><h3>Shop</h3><span id="tier-label"></span></div><div id="shop" class="shop-grid"></div>
+            <div class="shop-controls"><button id="roll">Roll · 1 gold</button><span id="budget-note"></span><button id="end-turn" class="primary">End turn → Battle</button></div>
+          </div>
+        </section>
+        <section class="lane board opponent-board" aria-labelledby="opponent-title">
+          <div class="board-heading"><h2 id="opponent-title">Model A</h2><div id="ai-score" class="score-chips"></div></div>
+          <p class="small-note" id="opponent-note">Separate shop; the bot cannot see your current team. Revealed at battle.</p><div id="ai-team" class="pet-row"></div>
+        </section>
+        <section id="battle-panel" class="lane board" hidden aria-label="Battle replay">
+          <div class="board-heading"><h2 id="battle-result"></h2><button id="next-round" class="primary">Next round →</button></div>
+          <p id="battle-event" class="stage-message"></p>
+          <div class="playback"><button id="battle-start" aria-label="Back to battle start">|◀</button><button id="battle-prev" aria-label="Previous step">←</button><button id="battle-play">▶ Play</button><button id="battle-next" aria-label="Next step">→</button><label>Speed <select id="battle-speed"><option value="700">1×</option><option value="300">2×</option><option value="120">4×</option></select></label><span id="frame-count" class="frame-count"></span></div>
+          <input id="battle-slider" class="scrubber" type="range" min="0" value="0" aria-label="Battle progress">
+          <p class="small-note">Replay of actual battle states. Battle damage does not change your permanent team. Pause or step through the fight.</p>
+        </section>
+      </div>
+      <aside>
+        <section class="lane inspect-panel"><h2 id="selection-title">Select a pet or food</h2><div id="selection-detail"><p>Select a shop card to buy it, or choose a target for food and merging. Select a team pet to sell, swap or merge.</p></div><div id="selection-actions" class="action-list"></div></section>
+        <details class="lane rules-panel"><summary>Rules and model</summary><div>
+          <p>Both sides start with 5 lives, 10 gold and separate shops. A loss costs 1 life; a draw costs none. Round 3 restores up to 1 life. The match ends when either side has no lives or reaches 10 wins.</p>
+          <p>Each shop allows 30 actions before battle is forced. Matches end after at most 40 rounds; reaching that limit is not a win.</p>
+          <p>Model A (85101): 341,516 frozen parameters. The browser uses the same rules and legal-action mask, choosing the highest-probability move. No GPU or further training is needed.</p>
+          <p>This is a frozen v0.46-inspired sandbox, not the official client. Direct duels differ from the benchmark: 82.27% was the three-model mean ten-win episode success against opponent pools, not a human win rate.</p>
+          <p>The match stays in this page and is lost on refresh. The current AI shop is hidden; its previous-round decisions are revealed after battle.</p>
+          <p id="model-evidence"></p><p><a href="https://pyodide.org/en/0.28.3/usage/webworker.html" target="_blank" rel="noreferrer">Browser Python runtime: Pyodide</a></p>
+        </div></details>
+        <details class="lane decisions-panel" id="decisions-panel"><summary>Inspect the bot’s last shopping round</summary><div id="ai-decisions"><p>Available after the first battle.</p></div></details>
+      </aside>
+    </section>
+    <noscript>Enable JavaScript to run the game.</noscript>
+  </main>
+  <script type="module" src="play.js"></script>
+</body></html>

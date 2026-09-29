@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://diannedaian.github.io/blog/learning-rl-with-super-auto-pets.html">
+  <meta name="author" content="Dingning (Dianne) Cao">
+  <meta name="description" content="Teaching a small model to play Super Auto Pets (Turtle Pack): building a simulator, bootstrapping with behavior cloning, and training with Maskable PPO.">
+  <title>Training a Bot I can't Beat — Dianne Cao</title>
+  <link rel="icon" href="../images/website_favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <nav class="article-nav" aria-label="Website">
+    <a class="author-home" href="../index.html">Dianne Cao</a>
+    <a href="../index.html?view=blog#portfolio">← Back to Blog</a>
+  </nav>
+  <main id="article">
+    <article>
+      <header class="article-header">
+        <p class="eyebrow">Learning by building · Reinforcement learning</p>
+        <h1>Training a Bot I can't Beat</h1>
+        <p class="dek">Teaching a small model to play Super Auto Pets (Turtle Pack)</p>
+        <div class="byline"><span>By Dianne Cao</span><span>September 2026</span><span>5 min read</span></div>
+      </header>
+      <figure class="hero-art">
+        <img src="assets/sap-rl-teaser-dianne-signed.jpg" width="2048" height="2048" fetchpriority="high"
+             alt="A friendly robot cuddles a blue pet, surrounded by a pink jellyfish, an orange cat, a skunk, a fish tank and colorful confetti. Hand-drawn by Dianne.">
+        <figcaption>Illustration by Dianne (<a href="https://www.instagram.com/daian_art/">@daian_art</a>).</figcaption>
+      </figure>
+      <div class="reading-column">
+        <div class="article-body">
+          <p>I wanted to understand reinforcement learning beyond the diagrams and make a fun project. I chose <a href="https://teamwoodgames.com/">Super Auto Pets</a>, an auto-battler where you buy, combine and arrange a team of animals, then watch them fight automatically. Despite the individual decisions looking simple, combinations, team builds, and pivoting between battles are nontrivial.</p>
+          <p>By the end, I had an unofficial 60-pet simulator and a bot I fail to beat. Along the way, I also had to overcome agents that swapped pets back and forth, repeatedly toggled shop freezes, or ended turns without buying anything. Those failures taught me more than a smooth training curve would have.</p>
+
+          <nav class="project-links" aria-label="Try the project">
+            <a href="https://github.com/diannedaian/sap-rl-lab">Code ↗</a>
+            <a href="https://huggingface.co/DianneDaian/sap-rl-turtle-pack">Hugging Face models ↗</a>
+            <a href="../play/">Play against the bot →</a>
+          </nav>
+
+          <h2>Building the Arena</h2>
+          <figure class="arena-figure" id="figure-1">
+            <a href="../play/" aria-label="Play against the agent in the arena">
+              <img src="assets/arena-demo-2x.gif" width="1200" height="641" loading="lazy" alt="A two-times-speed recording of a human playing against model A in the emoji arena.">
+            </a>
+            <figcaption>Figure 1. Playing against the agent, click on the image to access the arena.</figcaption>
+          </figure>
+          <p>The first challenge was the environment, not the network. I built a Python simulator wrapped in Gymnasium: the agent observes its team, shop, gold, lives and round, then chooses a shopping action. Combat resolves automatically. An episode ends at ten wins or zero lives, with a computational cap of 40 rounds.</p>
+          <p>I started with eight pets, then expanded tier by tier to all 60 ordinary Turtle Pack pets, 18 foods and seven battle tokens. Each expansion needed more than catalog entries: summons, copied abilities, food effects and level-up rewards interact through event ordering. I added rule tests and deterministic replays before training on new mechanics. The final release passed 1,039 Python tests, though self-consistency is not proof of official-client parity.</p>
+          <p>The sandbox freezes a v0.46-inspired ruleset. It also uses adjacent swaps and forces battle after 30 shopping actions—deliberate differences from the official game. For another pack, I would reuse the engine, training loop and evaluation tooling, implement and test new abilities, then retrain or fine-tune. The current species-specific input encoding means new pets are not automatically understood by the old checkpoint.</p>
+
+          <h2>How We Trained</h2>
+          <p>No foundation model was involved. The final actor and critic are separate two-layer, 64-unit Tanh networks: <strong>341,516 parameters</strong> in total. A 2,531-feature observation feeds a policy over 139 discrete actions. The actor chooses moves; the critic estimates future return, not win probability.</p>
+          <h3>Imitate first, then improve</h3>
+          <p>Random exploration sometimes learned to do almost nothing. Behavior cloning (BC) gave it a better starting point: three scripted teachers demonstrated stat-building, summoning and tempo-oriented play. In the initial BC experiment, 1,800 episodes produced 124,809 action labels; 300 separate episodes were held out. Twenty epochs of cross-entropy training taught the actor to predict teacher actions. The critic was not trained during BC.</p>
+          <p>These teachers were useful, not optimal: they never froze shops, and their demonstrations included losses. PPO then learned from the agent’s own play, using a clipped policy objective plus a value-prediction loss. There was no continuing imitation loss. BC made early learning faster across the three tested seeds, but did not establish a universally better final policy.</p>
+          <p><strong>Maskable PPO</strong> excludes illegal actions before sampling—for example, buying without enough gold. It does not exclude legal but pointless swaps. A target KL of 0.01 adds a separate brake: stop further updates on a rollout batch when the approximate policy change becomes too large. This compares the updated policy with the rollout policy, not with the teacher.</p>
+          <figure class="pipeline-figure" id="training-pipeline">
+            <picture>
+              <source media="(max-width: 600px)" srcset="assets/training-pipeline-mobile.svg">
+              <img src="assets/training-pipeline.svg" width="1000" height="404" loading="lazy" alt="Training pipeline: scripted demonstrations → behavior cloning → Maskable PPO → validation checkpoint selection → held-out testing → frozen browser demo. Validation can guide further PPO, but test scores never select checkpoints.">
+            </picture>
+            <figcaption>Figure 2. Our training and evaluation pipeline.</figcaption>
+          </figure>
+          <h3>Reward and compute</h3>
+          <p>The final reward was intentionally small and explicit:</p>
+          <p class="reward-formula"><code>reward = battle outcome − 0.005 per action</code><span>Battle win: +1 · loss: −1 · draw or no battle: 0</span></p>
+          <p>There was no extra ten-win bonus or direct punishment for unspent gold. With discount factor γ = 1, the action cost encourages efficiency, while battle results provide the main learning signal.</p>
+          <p>Each rollout collected 2,048 decisions (eight environments × 256 steps), followed by up to ten PPO epochs with batch size 256, learning rate 3e−4 and clip range 0.2. The final candidates inherited Tier-5 weights and each received 6.29 million full-pack PPO steps. Three candidates plus seven opponent generators totaled <strong>26.21 million PPO steps</strong>. Full-pack preparation through the first passing test took about <strong>two hours on local CPU</strong>, with at most two single-threaded training workers; this excludes earlier curricula and the final confirmation. Small networks and direct state simulation made a GPU unnecessary for this stage.</p>
+
+          <h2>Interesting Observations</h2>
+          <h3>A cheaper loss can look attractive</h3>
+          <p>A per-action penalty has a catch: useful purchases also cost reward. In an early three-seed comparison, switching to swap-only penalties eliminated no-purchase failures in two runs. But freezing loops remained, and none of those six final models reached ten wins against the learned test opponents. Fixing one behavior was not the same as learning a strong strategy.</p>
+          <h3>A penalty is not a guarantee</h3>
+          <p>The replay viewer exposed a failure with 182 swaps in 247 actions. The penalty really was being applied. Other policies repeatedly froze and unfroze items; punishing swaps alone did not address that. I inspected action probabilities, rewards and value estimates rather than assuming every loop was a missing reward term.</p>
+          <h3>More training can undo good behavior</h3>
+          <p>BC-started policies could still deteriorate under PPO. In a matched continuation experiment, adding the KL brake raised mean ten-win success from 61.08% to 69.50%, while episodes requiring forced battle fell from 7.63% to 0.10%. These were earlier, smaller-sandbox results—not directly comparable with the final score. They justified retaining conservative updates and validation-based checkpoint selection, not claiming that instability was solved forever.</p>
+
+          <h2>Results and Conclusion</h2>
+          <p>Training, validation and test used separate learned-opponent pools: saved teams generated by independently trained policies, sampled for battles. These provided stronger opposition than simple scripts without a live second agent learning simultaneously. I chose checkpoints using validation only, then evaluated the fixed models against the held-out learned pools.</p>
+          <figure class="results-figure" id="figure-3">
+            <picture>
+              <source media="(max-width: 800px)" srcset="assets/results-fullpack-mobile.svg">
+              <img src="assets/results-fullpack.svg" width="2232" height="1026" loading="lazy" alt="Full-pack validation improves across models A, B and C with fluctuations; stars mark selected checkpoints. Held-out test / fresh-seed confirmation: A 84.7% / 80.6%, B 81.0% / 84.1%, C 81.1% / 80.9%. Means are 82.27% and 81.87%.">
+            </picture>
+            <figcaption>Figure 3. Full-pack learning progress and held-out performance. Raw validation curves use 400 episodes per point; stars mark the selected checkpoints. Final evaluations use 1,000 episodes per model for each seed set. Dashed lines mark the 80% target.</figcaption>
+          </figure>
+          <p>The three models averaged <strong>82.27%</strong> ten-win success on the held-out test and <strong>81.87%</strong> in the fresh-seed confirmation (3,000 episodes each). The confirmation changed episode seeds, not opponent policies. These are ten-win run completion rates, not individual battle win rates or official Arena results. Frozen opponents limit what we can claim about generalization; passing 80% also does not prove convergence.</p>
+          <p>The demo runs model A inside your browser using Pyodide and NumPy, with emoji instead of official game artwork. Its action choices matched the original Torch policy on 1,200 tested states. Human-versus-bot play is a separate head-to-head format, not the benchmark above, and the bot does not learn from your games.</p>
+          <p>I really had fun training this small agent, and I look forward to expanding it to other pet packs in the future. A huge thank you to the team behind <a href="https://teamwoodgames.com/">Super Auto Pets</a> for creating such an amazing game that inspired this project. If you’re a player, challenge yourself and <a href="../play/">try playing against the bot</a>!</p>
+        </div>
+        <footer class="article-footer">
+          <nav aria-label="Project resources">
+            <a href="https://github.com/diannedaian/sap-rl-lab">Project code ↗</a>
+            <a href="https://huggingface.co/DianneDaian/sap-rl-turtle-pack">Model checkpoints ↗</a>
+            <a href="https://github.com/diannedaian/sap-rl-lab/blob/main/docs/PROJECT_WRAPUP.md">Experiment report ↗</a>
+            <a href="https://github.com/diannedaian/sap-rl-lab/blob/main/docs/IMITATION_REPORT.md">BC experiment ↗</a>
+            <a href="https://github.com/diannedaian/sap-rl-lab/blob/main/docs/KL_BRAKE_REPORT.md">KL experiment ↗</a>
+            <a href="https://github.com/diannedaian/sap-rl-lab/blob/main/docs/REWARD_COST_REPORT.md">Reward experiment ↗</a>
+          </nav>
+          <p>Independent educational project inspired by Super Auto Pets, a game by Team Wood Games. Not affiliated with or endorsed by Team Wood Games. The version-pinned simulator differs from the official client.</p>
+          <a href="../index.html?view=blog#portfolio">← Back to Blog</a>
+        </footer>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="404" viewBox="0 159 1000 404" role="img" aria-labelledby="title desc">
+  <title id="title">From scripted play to a trained bot</title>
+  <desc id="desc">A tested versioned arena grows from eight to sixty pets. Scripted demonstrations initialize the actor with behavior cloning. Maskable PPO improves the policy with a KL update brake. Validation selects checkpoints and can guide further training. Selected checkpoints undergo held-out testing, then model A is exported to the browser. Test scores do not feed checkpoint selection.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#527482"/></marker></defs>
+  <rect width="1000" height="563" fill="#fff"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#263c46">
+    <g fill="none" stroke="#527482" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M276 249 H359"/><path d="M600 249 H683"/>
+      <path d="M804 310 V409"/>
+      <path d="M684 474 H601"/><path d="M360 474 H277"/>
+      <path d="M924 453 H958 V270 H925" stroke-dasharray="6 5"/>
+    </g>
+    <text x="785" y="364" font-size="18" text-anchor="end">saved checkpoints</text>
+    <text x="982" y="362" font-size="17" text-anchor="middle" transform="rotate(-90 982 362)">continue PPO</text>
+    <rect x="36" y="183" width="240" height="128" rx="14" fill="#e1eff8"/>
+    <text x="57" y="214" font-size="15" letter-spacing="1.3">01 · DEMONSTRATE</text>
+    <text x="57" y="248" font-size="25" font-weight="700">Scripted play</text>
+    <text x="57" y="280" font-size="19">Stats · summons · tempo</text>
+    <rect x="360" y="183" width="240" height="128" rx="14" fill="#fff0c7"/>
+    <text x="381" y="214" font-size="15" letter-spacing="1.3">02 · WARM START</text>
+    <text x="381" y="248" font-size="25" font-weight="700">Behavior cloning</text>
+    <text x="381" y="280" font-size="19">Imitate teacher actions</text>
+    <rect x="684" y="183" width="240" height="128" rx="14" fill="#fff0c7"/>
+    <text x="705" y="214" font-size="15" letter-spacing="1.3">03 · IMPROVE</text>
+    <text x="705" y="248" font-size="25" font-weight="700">Maskable PPO</text>
+    <text x="705" y="280" font-size="19">Legal actions + KL brake</text>
+    <rect x="684" y="411" width="240" height="128" rx="14" fill="#ece3f3"/>
+    <text x="705" y="442" font-size="15" letter-spacing="1.3">04 · SELECT</text>
+    <text x="705" y="476" font-size="25" font-weight="700">Validation</text>
+    <text x="705" y="508" font-size="19">Choose checkpoints</text>
+    <rect x="360" y="411" width="240" height="128" rx="14" fill="#e1eff8"/>
+    <text x="381" y="442" font-size="15" letter-spacing="1.3">05 · MEASURE</text>
+    <text x="381" y="476" font-size="25" font-weight="700">Held-out test</text>
+    <text x="381" y="508" font-size="19">Then check fresh seeds</text>
+    <rect x="36" y="411" width="240" height="128" rx="14" fill="#e3efde"/>
+    <text x="57" y="442" font-size="15" letter-spacing="1.3">06 · PLAY</text>
+    <text x="57" y="476" font-size="25" font-weight="700">Browser demo</text>
+    <text x="57" y="508" font-size="19">Export frozen model A</text>
+  </g>
+</svg>

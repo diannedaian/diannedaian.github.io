@@ -88,6 +88,7 @@
     <link rel="stylesheet" type="text/css" href="css/vendor.css" />
     <link rel="stylesheet" type="text/css" href="fonts/icomoon.css" />
     <link rel="stylesheet" type="text/css" href="style.css?v=20260923-dreamgrid" />
+    <link rel="stylesheet" href="css/blog-preview.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -393,6 +394,12 @@
               >Projects</a
             >
             <a
+              href="#portfolio"
+              class="text-decoration-none text-uppercase"
+              data-filter=".blog"
+              >Blog</a
+            >
+            <a
               href="#"
               class="text-decoration-none text-uppercase"
               data-filter=".portrait"
@@ -417,6 +424,19 @@
           class="grid p-0 clearfix row row-cols-2 row-cols-md-3 row-cols-lg-5"
         >
           <!-- Design Projects (fashion), newest to oldest -->
+          <article class="col mb-4 portfolio-item blog">
+            <a class="blog-preview-card" href="blog/learning-rl-with-super-auto-pets.html">
+              <img src="blog/assets/sap-rl-teaser-dianne-signed.jpg" width="2048" height="2048"
+                   alt="Dianne's illustration of a friendly robot surrounded by colorful pets and confetti" />
+              <div class="blog-preview-copy">
+                <p class="blog-preview-meta">September 2026 · Reinforcement learning</p>
+                <h3>Training a Bot I can't Beat</h3>
+                <p>Teaching a small model to play Super Auto Pets (Turtle Pack)</p>
+                <p class="blog-preview-status">5 min read</p>
+                <span class="blog-preview-read">Read the article <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </article>
           <div class="col mb-4 portfolio-item fashion">
             <div class="portfolio-wrapper">
               <a href="DesignProject/dreamgrid.html" class="project-page-link">
@@ -1684,7 +1704,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if we should restore a specific portfolio filter
     const savedFilter = localStorage.getItem('portfolioFilter');
 
-    if (savedFilter && window.location.hash === '#portfolio') {
+    if (savedFilter && window.location.hash === '#portfolio' &&
+        new URLSearchParams(window.location.search).get('view') !== 'blog') {
         // Clear the saved filter
         localStorage.removeItem('portfolioFilter');
 

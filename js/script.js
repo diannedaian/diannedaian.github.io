@@ -7,6 +7,12 @@
     var $buttonGroup = $(".button-group");
     var $checked = $buttonGroup.find(".is-checked");
     var filterValue = $checked.attr("data-filter");
+    // A shareable local entry and a reliable return path from an article.
+    if (new URLSearchParams(window.location.search).get("view") === "blog") {
+      $buttonGroup.find("a").removeClass("is-checked");
+      $buttonGroup.find('[data-filter=".blog"]').addClass("is-checked");
+      filterValue = ".blog";
+    }
 
     // Initialize Isotope only once
     $grid.isotope({

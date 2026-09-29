@@ -1,0 +1,472 @@
+{
+  "models": [
+    {
+      "model": "A",
+      "seed": 85101,
+      "color": "#347c8d",
+      "validation": [
+        {
+          "steps": 0,
+          "success_rate": 0.3875
+        },
+        {
+          "steps": 262144,
+          "success_rate": 0.4525
+        },
+        {
+          "steps": 524288,
+          "success_rate": 0.4025
+        },
+        {
+          "steps": 786432,
+          "success_rate": 0.5325
+        },
+        {
+          "steps": 1048576,
+          "success_rate": 0.51
+        },
+        {
+          "steps": 1310720,
+          "success_rate": 0.6125
+        },
+        {
+          "steps": 1572864,
+          "success_rate": 0.565
+        },
+        {
+          "steps": 1835008,
+          "success_rate": 0.665
+        },
+        {
+          "steps": 2097152,
+          "success_rate": 0.6975
+        },
+        {
+          "steps": 2359296,
+          "success_rate": 0.6875
+        },
+        {
+          "steps": 2621440,
+          "success_rate": 0.765
+        },
+        {
+          "steps": 2883584,
+          "success_rate": 0.6975
+        },
+        {
+          "steps": 3145728,
+          "success_rate": 0.7675
+        },
+        {
+          "steps": 3407872,
+          "success_rate": 0.72
+        },
+        {
+          "steps": 3670016,
+          "success_rate": 0.7325
+        },
+        {
+          "steps": 3932160,
+          "success_rate": 0.75
+        },
+        {
+          "steps": 4194304,
+          "success_rate": 0.735
+        },
+        {
+          "steps": 4456448,
+          "success_rate": 0.7525
+        },
+        {
+          "steps": 4718592,
+          "success_rate": 0.7475
+        },
+        {
+          "steps": 4980736,
+          "success_rate": 0.8175
+        },
+        {
+          "steps": 5242880,
+          "success_rate": 0.8375
+        },
+        {
+          "steps": 5505024,
+          "success_rate": 0.7525
+        },
+        {
+          "steps": 5767168,
+          "success_rate": 0.76
+        },
+        {
+          "steps": 6029312,
+          "success_rate": 0.815
+        },
+        {
+          "steps": 6291456,
+          "success_rate": 0.76
+        }
+      ],
+      "selected": {
+        "steps": 5242880,
+        "success_rate": 0.8375
+      },
+      "test": {
+        "episodes": 1000,
+        "successes": 847,
+        "success_rate": 0.847
+      },
+      "confirmation": {
+        "episodes": 1000,
+        "successes": 806,
+        "success_rate": 0.806
+      }
+    },
+    {
+      "model": "B",
+      "seed": 85201,
+      "color": "#b57b2a",
+      "validation": [
+        {
+          "steps": 0,
+          "success_rate": 0.4425
+        },
+        {
+          "steps": 262144,
+          "success_rate": 0.4175
+        },
+        {
+          "steps": 524288,
+          "success_rate": 0.49
+        },
+        {
+          "steps": 786432,
+          "success_rate": 0.5375
+        },
+        {
+          "steps": 1048576,
+          "success_rate": 0.585
+        },
+        {
+          "steps": 1310720,
+          "success_rate": 0.59
+        },
+        {
+          "steps": 1572864,
+          "success_rate": 0.63
+        },
+        {
+          "steps": 1835008,
+          "success_rate": 0.635
+        },
+        {
+          "steps": 2097152,
+          "success_rate": 0.72
+        },
+        {
+          "steps": 2359296,
+          "success_rate": 0.725
+        },
+        {
+          "steps": 2621440,
+          "success_rate": 0.6725
+        },
+        {
+          "steps": 2883584,
+          "success_rate": 0.615
+        },
+        {
+          "steps": 3145728,
+          "success_rate": 0.7025
+        },
+        {
+          "steps": 3407872,
+          "success_rate": 0.755
+        },
+        {
+          "steps": 3670016,
+          "success_rate": 0.705
+        },
+        {
+          "steps": 3932160,
+          "success_rate": 0.7525
+        },
+        {
+          "steps": 4194304,
+          "success_rate": 0.73
+        },
+        {
+          "steps": 4456448,
+          "success_rate": 0.75
+        },
+        {
+          "steps": 4718592,
+          "success_rate": 0.795
+        },
+        {
+          "steps": 4980736,
+          "success_rate": 0.77
+        },
+        {
+          "steps": 5242880,
+          "success_rate": 0.7725
+        },
+        {
+          "steps": 5505024,
+          "success_rate": 0.7875
+        },
+        {
+          "steps": 5767168,
+          "success_rate": 0.8175
+        },
+        {
+          "steps": 6029312,
+          "success_rate": 0.8
+        },
+        {
+          "steps": 6291456,
+          "success_rate": 0.7825
+        }
+      ],
+      "selected": {
+        "steps": 5767168,
+        "success_rate": 0.8175
+      },
+      "test": {
+        "episodes": 1000,
+        "successes": 810,
+        "success_rate": 0.81
+      },
+      "confirmation": {
+        "episodes": 1000,
+        "successes": 841,
+        "success_rate": 0.841
+      }
+    },
+    {
+      "model": "C",
+      "seed": 85301,
+      "color": "#8966a5",
+      "validation": [
+        {
+          "steps": 0,
+          "success_rate": 0.355
+        },
+        {
+          "steps": 262144,
+          "success_rate": 0.37
+        },
+        {
+          "steps": 524288,
+          "success_rate": 0.4375
+        },
+        {
+          "steps": 786432,
+          "success_rate": 0.5175
+        },
+        {
+          "steps": 1048576,
+          "success_rate": 0.5375
+        },
+        {
+          "steps": 1310720,
+          "success_rate": 0.5825
+        },
+        {
+          "steps": 1572864,
+          "success_rate": 0.61
+        },
+        {
+          "steps": 1835008,
+          "success_rate": 0.52
+        },
+        {
+          "steps": 2097152,
+          "success_rate": 0.635
+        },
+        {
+          "steps": 2359296,
+          "success_rate": 0.63
+        },
+        {
+          "steps": 2621440,
+          "success_rate": 0.6625
+        },
+        {
+          "steps": 2883584,
+          "success_rate": 0.6675
+        },
+        {
+          "steps": 3145728,
+          "success_rate": 0.6375
+        },
+        {
+          "steps": 3407872,
+          "success_rate": 0.6775
+        },
+        {
+          "steps": 3670016,
+          "success_rate": 0.71
+        },
+        {
+          "steps": 3932160,
+          "success_rate": 0.7275
+        },
+        {
+          "steps": 4194304,
+          "success_rate": 0.695
+        },
+        {
+          "steps": 4456448,
+          "success_rate": 0.755
+        },
+        {
+          "steps": 4718592,
+          "success_rate": 0.7275
+        },
+        {
+          "steps": 4980736,
+          "success_rate": 0.725
+        },
+        {
+          "steps": 5242880,
+          "success_rate": 0.7525
+        },
+        {
+          "steps": 5505024,
+          "success_rate": 0.7375
+        },
+        {
+          "steps": 5767168,
+          "success_rate": 0.7625
+        },
+        {
+          "steps": 6029312,
+          "success_rate": 0.715
+        },
+        {
+          "steps": 6291456,
+          "success_rate": 0.7675
+        }
+      ],
+      "selected": {
+        "steps": 6291456,
+        "success_rate": 0.7675
+      },
+      "test": {
+        "episodes": 1000,
+        "successes": 811,
+        "success_rate": 0.811
+      },
+      "confirmation": {
+        "episodes": 1000,
+        "successes": 809,
+        "success_rate": 0.809
+      }
+    }
+  ],
+  "scope": "60 pets, Tier 1\u20136 shops, 40-round episode cap",
+  "notes": [
+    "Validation: 400 episodes per point; raw, unsmoothed; repeated boundary reloads deduplicated.",
+    "Zero steps is the transferred Tier-5 policy, not random initialization.",
+    "Test and confirmation: 1,000 episodes per model, same learned opponent pools, different episode seeds.",
+    "Points are estimates, not confidence bounds or human win rates."
+  ],
+  "source_sha256": {
+    "docs/evidence/fullpack-v1/manifest.json": "8ac09cab7f08f05881c4e0f5ca50ef533ee0d9b335f3e684313aed25762c510e",
+    "docs/evidence/fullpack-v1/segments--segment005--selection.json": "722a5a3a76c31c9781fa90cb758dbf691c6a4a18c9857b6948d204ff6b04df50",
+    "runs/fullpack-tier6-curves-final-v1/evidence.json": "25c40dba75e0e41f73496186e786128714e229af30d53061e399e5ef16cb62df",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval000-step0.json": "5a0532e5228b4a1b15e9438634003f31a64b1af432827dcd2803e1a6c8d94bb0",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval001-step262144.json": "f130bdee85dbf30dc98cf94515faad7509fd7695480d714c7f9d305cb2978ae3",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval002-step524288.json": "e2f2c32b565743e9f5d23f8b96933856293c365948569d7b8d2531c1cd19b1ce",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval003-step786432.json": "3f8c6d218a0408f368c10b8a56c1c7558a35604e0c0e7c59f9a244f47ed2a4bf",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval004-step1048576.json": "a4e51b25c7ea9a3f1a93c0dd97e073164d9c2fbe9a7b4237f7191394f1663dd9",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval005-step1310720.json": "8746583a0ddf611e425e6789a540cfeb962f904456bd5ef916d6a827cd1ba230",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval006-step1572864.json": "5ee5575a77b7712e1cb0772c1cdeba46037eb896aaffa919d6c2974907adfdc7",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval007-step1835008.json": "314691c26f67271332bd5c083164b43d555ca5e905054f1ecf051699a5f7f694",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85101/eval008-step2097152.json": "7ee70dbcfc55a3ba4219f188096c43426074ba0240ab2e261760b332315ecdcd",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85101/eval000-step0.json": "eefdb65564ecda42a13c0dcea008323b6117c24dd40c81e75638f29dbbddda18",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85101/eval001-step262144.json": "4812e33b4d0a7eef03f0dfe80de12463ab355900b08fbb19b57cb393730ddabf",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85101/eval002-step524288.json": "3b5de790420471973546cc0a739826e6c9b447f38173e8803cd35a2fde8c17be",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85101/eval003-step786432.json": "7af20505173e6650903734eea14944d246a9b1ace035837cbb2f87101605da55",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85101/eval004-step1048576.json": "fb916ccdc3c9b4d63e7f2c2aeb7689b64dfd1f2111741efec4f7443cffe6b1c8",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85101/eval000-step0.json": "929d8291376099e716dc6996ff6ee6df9d5bcbbd68cba7dd7a2ada5a23865c61",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85101/eval001-step262144.json": "9d7fb6498a1eb5e564fb296b3c374b3c91705430c318bbaba531efa5541b54b4",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85101/eval002-step524288.json": "345cb79616f240d565637939f1622ec6915f648ade52bddce93f8bba574b47e8",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85101/eval003-step786432.json": "8ec4063a6b406b446d5a2d3044263303b4347f22b0f23889288370d4ac29bf2e",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85101/eval004-step1048576.json": "66be15a7a2882a61f04910b9b5a2b0436cb780ecc906bb5aa9de8ddb95e42586",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85101/eval000-step0.json": "ac6357a07621a9493326d062b1677a3a2ab126650ddd4a6c31a58c2a42bcee4f",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85101/eval001-step262144.json": "15298eff2e9f1718503a3b1eeaff565ce840b3013f8fe801b29a8d999630bf93",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85101/eval002-step524288.json": "2bedca5aba26f962ad3f6e53c9332e228fbd1c03b74cfdffb85c57ca1f9f1c6f",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85101/eval003-step786432.json": "9a1ed99241bcbe4a79059397eaf63df2acb2263c40ef2b0b125412a29a91ec21",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85101/eval004-step1048576.json": "81d1d2e51ae4d83509a3320b48cc6ee19e68b2f6c03410262caae67fede69491",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85101/eval000-step0.json": "6e12dce18d9f913e9185d3bd778fe87c99998e184d8108962cb45ddf771621c0",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85101/eval001-step262144.json": "89e8e93954584763b97f6ce34b9122e7719fb43462c77fbffb945119401ae949",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85101/eval002-step524288.json": "5500b2e7693676f5bd2343e6269f8d8d6594dbcdef54bcd9a6a79aff98481839",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85101/eval003-step786432.json": "c102f6ce225c5cd002691908616f4d3ad54d2f5341dda98cabcb73c8aa17f4aa",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85101/eval004-step1048576.json": "ce3c9839ae1ec59c4ae5f555bf605bc979ed14fac34743b4d244840b526f7651",
+    "docs/evidence/fullpack-v1/segments--segment005--test-85101.json.gz": "149701940823f0ca980c5f03f96f561f071724826090c966e72e87bf91a0e169",
+    "docs/evidence/fullpack-v1/confirmation171-v1--model-85101.json.gz": "9cff17e105f62df7f8dd2d204c4bf86ed35ac5bb1c8994039a127fd308a049c4",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval000-step0.json": "13fe2dbee21d63a3ffb497926bb385c5d70484a660c7ac55da3cc2c61466bdc5",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval001-step262144.json": "43691cec974498be5e9f203ebbf331fe053259f2fe50176a34b8b11cda842c04",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval002-step524288.json": "10bea8fd625f444f948b7ece2dac51f6f2c2d02821a65eaee9761a0329aa1f06",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval003-step786432.json": "0dc645a300aa7a80a6d285e3b7db96130c6fb095ed7641b07306320226d3f15b",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval004-step1048576.json": "4f6170383a1d8d102ada7196435c43723fd54f95fca9c561d16af1cc8e08f6ac",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval005-step1310720.json": "319874605351a5b0469b3ea3891c2298116d54a03f7a0a944600149ceee578f9",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval006-step1572864.json": "094fc9e3a4d11c449a28e455d5e2f94c7706b03752fd1cacdbfb40979f200107",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval007-step1835008.json": "2b3775f56272ea214056baada6874eb4e23ce8678d114e64ed32b5aeb5f1105d",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85201/eval008-step2097152.json": "1da3ab515020efcf0f9845ad59623723b22426377451fc67bdbd33faab84eb27",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85201/eval000-step0.json": "591ed8f3eceaa12e72b143d16d0c8eb272cee288ff75bea2620e975280d1828f",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85201/eval001-step262144.json": "6a0e0a83cebb93751636402f7034772125d4ec0bc1b07d78fa1a3b510fff1a29",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85201/eval002-step524288.json": "1145ae223711e5384ab1ab4605c886a5a1a2e8bfaac701564f38c4ca08067474",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85201/eval003-step786432.json": "515c0d725a52e9ca483970f6f0e623a4764d16fe7e79ddc04905551e82135913",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85201/eval004-step1048576.json": "8a422a4df38082710b85bdf58f07725bdf7a3c1d95baa1a27123f3309cfc54f1",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85201/eval000-step0.json": "5a91557c08cf4e021568a2174137a44b4fa94b32af6ab92cb1ec52fbcd1b81dc",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85201/eval001-step262144.json": "208e1004904c19642c92903df411ad9479bfd1d94b120c12e4a10b9d32b7ecca",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85201/eval002-step524288.json": "f45fa95adb1ad5ecd90d53a88e4d24635d0763f5773ab60c71bd36eb4972f396",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85201/eval003-step786432.json": "722381aeb4fb7b146988f04aa232b57c105c4d374ed142d6188e8203bd5aad14",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85201/eval004-step1048576.json": "2c4e9567f8b2433bf72e423452645399edf31d25b19d8672ddb89e5e8a0bd233",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85201/eval000-step0.json": "77b6536be221f89bb22efe39e3db507517ca4065162ca4c82d532ac95df57952",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85201/eval001-step262144.json": "8c1e213a544960a95cec5a0e1aa1e3fa395e8cba038a8b05448da851b50c864f",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85201/eval002-step524288.json": "8bd3d6664a9b6f5dee989962ce3408bb75e22d62aeb4443978d2fa314c32e968",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85201/eval003-step786432.json": "df7466005eb809950d3ace6d05c194a6b997defc8043f3d863e5bbc5e153caf2",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85201/eval004-step1048576.json": "aa8980fb8aabd53dcc9d6f36cafbddeff3674c5c03f8e308c2b9867835c03b29",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85201/eval000-step0.json": "7a235989bf6eb682206818c11abe5c25fab95585759838dffbdcddca7fb88a4d",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85201/eval001-step262144.json": "fe2e6a3c3c965c323fdf235a7224b7b58d455ba3f17988b1f9a1d4d767d14ede",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85201/eval002-step524288.json": "6c939f9d657445d2d55fdc2baeaf836ebd18b79c399e1196ab1a38470fad87e4",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85201/eval003-step786432.json": "391ac5b37459ffe5d668d064ea5bd012414d76e42554c9c39003eb5e7da7bac2",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85201/eval004-step1048576.json": "1dc4689a692de300e7dbab4679629e5cdea2905771182bd1dc12a943dc3eec55",
+    "docs/evidence/fullpack-v1/segments--segment005--test-85201.json.gz": "d7848fb84c96ce964f58b9f25f93ec189936572ba110bf3f98a828d213fdcd36",
+    "docs/evidence/fullpack-v1/confirmation171-v1--model-85201.json.gz": "228a247e930f2b2fa15bb0a2dde0c8a47580b98e980b4f3bb1c570f4370fa8ca",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval000-step0.json": "08ec7b60bce19141284e1fd89a73b3abc695b9bf07aabbdd0918478a7943ce13",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval001-step262144.json": "d6ef5ac0145e5a08cb4f70221b700a3fcf4528907e4e1019d29a1504a45214aa",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval002-step524288.json": "847019f606d85efb63392d996bc645900d29bde37c09313a706064aa82ba252a",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval003-step786432.json": "38d106f5f6cf6c89572e3c574769a1b2968f466bb50615b1307ec4d4b53467d2",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval004-step1048576.json": "dce81d9e2027ae652d09ccaf444a50ac37c39e1ce62ea2ba7bb9f75058555711",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval005-step1310720.json": "dc7b748d467b7ca44cc240616144255646999ae546453bc199061f051bdd7633",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval006-step1572864.json": "223fce129c5ddb66e56a76608100a155831ef5d51160f93a6bd4c273f25460a2",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval007-step1835008.json": "80c647c98e123bae12f21a1d1ed420346759e8b422d08efee7b7db2dafb7ecc1",
+    "runs/fullpack-tier6-h40-v1/segments/segment001/candidate-85301/eval008-step2097152.json": "c99884ae56d7c0df689e5d51a7518f958d66b5af1ba560921d0dc3bc1bccf7ed",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85301/eval000-step0.json": "5ac3567ab92e9b8f43127245bb7c498bac4b9f1c2b21422c9496beb7bbda55dc",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85301/eval001-step262144.json": "7a10ab3f6c28efa117eda9e198223b422a5b4e507f477a20c1352b46a53f6d4c",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85301/eval002-step524288.json": "c11278136676cfdd95f68b9406c212e828525c2f436d4dd4bc1dac0acf33fd0c",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85301/eval003-step786432.json": "7efc1f00dd18f09e233072d90ec200b5d50a38de6928e009c71602ec1eb36ccd",
+    "runs/fullpack-tier6-h40-v1/segments/segment002/candidate-85301/eval004-step1048576.json": "24429f2026a51065a480ad519fb472c8d1a486bf88c23227910a8d8eeb06a22a",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85301/eval000-step0.json": "f4220354de6a005b36ce54d747f3567b6ac5f3c5447e61cacad76f20d2259c9b",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85301/eval001-step262144.json": "c5dd35466f8db8416be4b0ccc349410baa528310e88d8adc3ad860ebac4dcdb5",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85301/eval002-step524288.json": "ed45733853b05d52d3c78458a484df3f015aaa5bb67a76b8cee4ba9ad9db6d48",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85301/eval003-step786432.json": "e0b02ec1d7c65d1b124b4b4e6fa62393b035562e84ce22eefa20ee645b6f02e9",
+    "runs/fullpack-tier6-h40-v1/segments/segment003/candidate-85301/eval004-step1048576.json": "7838e48c0cac89c92d63dfb66990067ca095c93f8dbc381d2b1295919e79e93c",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85301/eval000-step0.json": "46eee114c7a53fec257d1c9245b986085ee5756db3f0ced416a72b90aab6688e",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85301/eval001-step262144.json": "4e1b4783f9defe2ef719e2c1b4f019fcaff35cd0ec6ab52041658c55072beeaa",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85301/eval002-step524288.json": "6f0dd61160fd59e8bf6652528834f5b4d0e8b259892d8376c13efcc7601eef18",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85301/eval003-step786432.json": "cfdb3d89cd4856fda88bd4afe252bf4bab9fba7c08744bde5b1363dbb96bc87e",
+    "runs/fullpack-tier6-h40-v1/segments/segment004/candidate-85301/eval004-step1048576.json": "d17bceaddb0884dc8d1848ab820d11a81607e0e67356b584ba51f5b6e9cddd1c",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85301/eval000-step0.json": "a9ce6d3ae5f06bc1eb9a6dd8674a1d10536036b25d5c34d50843dc69a7c5f127",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85301/eval001-step262144.json": "07050941a3d7fb1dde2e0c01efcdca2c4634d2082622a4e4775a505f69e68506",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85301/eval002-step524288.json": "26f881647d490515086b6b14a4b8122f018def1690cf5c77d2dbc43dc4d7c880",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85301/eval003-step786432.json": "75545c4aa56b01101e8c895cffe2415633fd1f745fe79c441db94a6e088848a9",
+    "runs/fullpack-tier6-h40-v1/segments/segment005/candidate-85301/eval004-step1048576.json": "8a74f758e8d546ca8ea06361c77b354e50f4f2eedf8bf6b22b0e3514d8c37804",
+    "docs/evidence/fullpack-v1/segments--segment005--test-85301.json.gz": "03fe9cb9df47148126df5d07a6bb12fd6dec94581d8bc731925ad098261a936a",
+    "docs/evidence/fullpack-v1/confirmation171-v1--model-85301.json.gz": "12e9753fd43fe6ed3921c22673d49c3b04d6f68667f910aa209408340f1c0bd0"
+  }
+}
