@@ -971,7 +971,7 @@
 				  Co-developed a design and fabrication system for 3D-printed objects with mechanically switchable surface appearances, enabling dynamic visual output without electronics.
 				</p>
 				<div class="research-links d-flex gap-3 mt-3 flex-wrap">
-				  <a href="https://hcie.csail.mit.edu/research/shiftlens/shiftlens.html" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener noreferrer">Website</a>
+				  <a href="https://hcie.csail.mit.edu/shiftlens/" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener noreferrer">Website</a>
 				  <a href="https://hcie.csail.mit.edu/research/shiftlens/2026-shiftlens-paper.pdf" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener noreferrer">Paper</a>
 				  <a href="https://www.youtube.com/watch?v=KJK-DvgmRNs" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener noreferrer">Video</a>
 				</div>
@@ -1727,6 +1727,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 filterButton.click();
             }
         }, 1000); // Longer delay to ensure Isotope is fully initialized
+    }
+});
+
+// Hidden, privacy-friendly homepage counters. Nothing is rendered for visitors.
+document.addEventListener('DOMContentLoaded', function() {
+    function countVisit(path, onLoad) {
+        const counter = new Image();
+        counter.alt = '';
+        counter.setAttribute('aria-hidden', 'true');
+        counter.style.display = 'none';
+
+        if (onLoad) {
+            counter.addEventListener('load', onLoad, { once: true });
+        }
+
+        counter.src = `https://hits.sh/${path}.svg`;
+        document.body.appendChild(counter);
+    }
+
+    // Counts every homepage load.
+    countVisit('diannedaian.github.io');
+
+    // Approximate unique visitors: count each browser profile once.
+    const uniqueVisitorKey = 'dianne-portfolio-visitor-counted';
+    if (!localStorage.getItem(uniqueVisitorKey)) {
+        countVisit('diannedaian.github.io/unique-visitors', function() {
+            localStorage.setItem(uniqueVisitorKey, 'true');
+        });
     }
 });
 </script>
