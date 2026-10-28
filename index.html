@@ -1747,12 +1747,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Counts every homepage load.
-    countVisit('diannedaian.github.io');
+    countVisit('diannedaian.github.io/portfolio-homepage-views');
 
     // Approximate unique visitors: count each browser profile once.
-    const uniqueVisitorKey = 'dianne-portfolio-visitor-counted';
+    const uniqueVisitorKey = 'dianne-portfolio-unique-visitor-v2';
     if (!localStorage.getItem(uniqueVisitorKey)) {
-        countVisit('diannedaian.github.io/unique-visitors', function() {
+        countVisit('diannedaian.github.io/portfolio-unique-visitors', function() {
             localStorage.setItem(uniqueVisitorKey, 'true');
         });
     }
