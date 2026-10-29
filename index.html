@@ -1732,6 +1732,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Hidden, privacy-friendly homepage counters. Nothing is rendered for visitors.
 document.addEventListener('DOMContentLoaded', function() {
+    const ownerOptOutKey = 'dianne-portfolio-owner-opt-out-v1';
+    const query = new URLSearchParams(window.location.search);
+    let ownerOptedOut = false;
+
+    // Visiting ?owner=1 marks this browser as the site owner, then removes the
+    // parameter from the address bar so future visits remain clean and uncounted.
+    if (query.get('owner') === '1') {
+        ownerOptedOut = true;
+
+        try {
+            localStorage.setItem(ownerOptOutKey, 'true');
+        } catch (error) {
+            // The current owner visit is still excluded if storage is unavailable.
+        }
+
+        query.delete('owner');
+        const remainingQuery = query.toString();
+        const cleanUrl = `${window.location.pathname}${remainingQuery ? `?${remainingQuery}` : ''}${window.location.hash}`;
+        window.history.replaceState({}, document.title, cleanUrl);
+    } else {
+        try {
+            ownerOptedOut = localStorage.getItem(ownerOptOutKey) === 'true';
+        } catch (error) {
+            ownerOptedOut = false;
+        }
+    }
+
+    if (ownerOptedOut) {
+        return;
+    }
+
     function countVisit(path, onLoad) {
         const counter = new Image();
         counter.alt = '';
@@ -1747,13 +1778,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Counts every homepage load.
-    countVisit('diannedaian.github.io/portfolio-homepage-views');
+    countVisit('diannedaian.github.io/portfolio-homepage-views-owner-filtered');
 
     // Approximate unique visitors: count each browser profile once.
-    const uniqueVisitorKey = 'dianne-portfolio-unique-visitor-v2';
-    if (!localStorage.getItem(uniqueVisitorKey)) {
-        countVisit('diannedaian.github.io/portfolio-unique-visitors', function() {
-            localStorage.setItem(uniqueVisitorKey, 'true');
+    const uniqueVisitorKey = 'dianne-portfolio-unique-visitor-v3';
+    let uniqueVisitorAlreadyCounted = false;
+
+    try {
+        uniqueVisitorAlreadyCounted = localStorage.getItem(uniqueVisitorKey) === 'true';
+    } catch (error) {
+        uniqueVisitorAlreadyCounted = false;
+    }
+
+    if (!uniqueVisitorAlreadyCounted) {
+        countVisit('diannedaian.github.io/portfolio-unique-visitors-owner-filtered', function() {
+            try {
+                localStorage.setItem(uniqueVisitorKey, 'true');
+            } catch (error) {
+                // Counting still works when the browser blocks local storage.
+            }
         });
     }
 });
